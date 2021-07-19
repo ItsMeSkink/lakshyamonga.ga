@@ -1,0 +1,189 @@
+@mixin home($scale) {
+    #home {
+        z-index: 1;
+        #contact {
+            display: flex;
+            align-items: center;
+            width: inherit;
+            justify-content: space-between;
+            z-index: 2;
+
+            span {
+                display: flex;
+                align-items: center;
+                i {
+                    font-size: 130px * $scale;
+                }
+
+                h2 {
+                    width: 300px;
+                    word-wrap: break-word;
+                }
+                color: white;
+            }
+
+            #phone {
+                i {
+                    font-size: 120px * $scale;
+                }
+                h2 {
+                    width: 270px;
+                }
+            }
+        }
+
+        #ProfileImage {
+            margin-top: -100px * $scale;
+            border-radius: 10000px * $scale;
+            height: 320px * $scale;
+            width: 320px * $scale;
+            image-rendering: auto;
+            z-index: 1;
+        }
+
+        #Social-Name-Search {
+            background-image: url(https://raw.githubusercontent.com/ItsMeSkink/HostingForBlogSite/master/Blog_Images/WebP_Images/Rectangle%2021.webp);
+            background-size: 180%;
+            background-repeat: no-repeat;
+            background-position: 50% 0%;
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 18px;
+            margin-top: -100px;
+            width: 85%;
+            z-index: 10;
+
+            #Social {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                span {
+                    display: inline-flex;
+                    align-items: center;
+
+                    a {
+                        margin: 0px 10px * $scale;
+                        font-size: 40px;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            h1 {
+                font-size: 70px * $scale;
+                margin-top: 80px * $scale;
+            }
+
+            #search {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px * $scale;
+                justify-content: center;
+            }
+            z-index: 10;
+
+            input {
+                font-size: 30px * $scale;
+                letter-spacing: 1px * $scale;
+                padding: 10px 20px * $scale;
+                width: 600px * $scale;
+                border-radius: 1000px * $scale;
+                border: none;
+                box-shadow: 5px * $scale 5px * $scale 5px * $scale rgba(0, 0, 0, 0.541);
+            }
+            i {
+                font-size: 60px * $scale;
+                margin-left: 5px * $scale;
+                font-weight: bolder;
+            }
+        }
+    }
+
+    #Tagline-Spotify {
+        margin-top: 20px * $scale;
+        background-image: url("https://raw.githubusercontent.com/ItsMeSkink/HostingForBlogSite/master/Blog_Images/WebP_Images/Negative%20Flat%20Buldged%20Rectangle.webp");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: 50% 40%;
+        background-origin: top center;
+        border-radius: 20px * $scale;
+        width: 106%;
+        padding: 20px * $scale;
+        padding-top: 12%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        z-index: 1;
+
+        p {
+            font-size: 26px * $scale;
+            width: 65%;
+        }
+        #SpotifyShow {
+            width: 50%;
+        }
+        #SpotifyHidden {
+            display: none;
+            width: 230px * $scale;
+            height: 80px * $scale;
+            filter: drop-shadow(5px * $scale 5px * $scale 20px * $scale black);
+        }
+    }
+
+    #Navigation {
+        margin-top: -395px * $scale;
+        width: 108%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        div {
+            background-image: linear-gradient(rgb(174, 0, 255), red);
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 20px * $scale;
+            padding: 5px * $scale 10px * $scale;
+            span {
+                position: relative;
+                display: flex;
+                align-items: center;
+                .material-icons {
+                    font-size: 80px * $scale;
+                }
+                h1 {
+                    display: none;
+                    position: absolute;
+                    width: 175px * $scale;
+                    background-color: yellow;
+                    font-size: 30px * $scale;
+                    padding: 5px * $scale;
+                    border-radius: 5px * $scale;
+                    word-wrap: break-word;
+                }
+            }
+        }
+
+        div:first-child {
+            span {
+                h1 {
+                    margin-left: -205px * $scale;
+                }
+            }
+        }
+        div:last-child {
+            span {
+                h1 {
+                    margin-left: 100px * $scale;
+                }
+            }
+        }
+    }
+}
+
+@include home(0.9);
+
+@import "./RESPONSIVE.scss";

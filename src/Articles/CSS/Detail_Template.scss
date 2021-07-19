@@ -1,0 +1,114 @@
+#detail {
+    // position: fixed;
+    width: 99vw;
+    border-radius: 20px;
+    height: 90vh;
+    margin: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+
+    #thumbnail-tags-spotify-share {
+        height: 97.6%;
+        width: 35%;
+        background-color: red;
+        border-radius: 20px 0px 0px 20px;
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #thumbnail {
+            height: 40%;
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        #tags-spotify-share {
+            height: 60%;
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            #tags {
+                height: 95%;
+                display: flex;
+                justify-content: flex-end;
+
+                ul {
+                    margin: 0;
+                    display: inline-block;
+                    margin-left: -50px;
+                    list-style-type: none;
+                    
+
+                    li {
+                        font-size: 40px;
+                        background-color: white;
+                        margin: 10px 0;
+                        padding: 5px 10px;
+                        border-left: 20px solid black;
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+            #spotify-share {
+                padding: 10px;
+                height: 95%;
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                #spotify {
+                    font-size: 120px;
+                    padding: 10px;
+                    background-color: black;
+                    color: white;
+                    border-radius: 20px;
+                }
+
+                #share {
+                    display: grid;
+                    grid-template-columns: repeat(2, 50%);
+                    grid-template-rows: repeat(2, 52%);
+                    grid-gap: 10px;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    #title-content {
+        display: flex;
+        flex-direction: column;
+        width: 62%;
+        padding: 20px;
+        height: 100%;
+        overflow: hidden;
+
+        h1 {
+            display: inline-block;
+            margin: 5px;
+            border-bottom: 3px solid black;
+            padding: 10px;
+        }
+        p {
+            overflow: auto;
+            padding: 10px;
+        }
+    }
+
+    #back {
+        position: absolute;
+        bottom: 1.5vh;
+        right: 3vw;
+        background-color: white;
+        padding: 15px;
+        border-radius: 20px;
+    }
+}

@@ -1,0 +1,263 @@
+@media only screen and (max-width: 1400px) {
+    #Navigation {
+        display: none;
+    }
+
+    #home {
+        width: 100%;
+        margin-bottom: 10vh;
+    }
+
+    #ProfileImage {
+        width: 200px !important;
+        height: auto !important;
+    }
+
+    #contact {
+        span {
+            i {
+                font-size: 80px !important;
+            }
+
+            h2 {
+                font-size: 30px !important;
+            }
+        }
+    }
+
+    #Social-Name-Search {
+        width: 95% !important;
+        background-image: url(https://github.com/ItsMeSkink/HostingForBlogSite/blob/master/Blog_Images/Rectangle%2027.png?raw=true) !important;
+        background-size: 3440px !important;
+        background-position: 51% 7px !important;
+        margin-top: -104px !important;
+
+        #Social {
+            span {
+                a {
+                    font-size: 3vw !important;
+                }
+            }
+        }
+
+        h1 {
+            font-size: 55px !important;
+            margin-top: 5vh !important;
+        }
+
+        #search {
+            transform: scale(0.9) !important;
+            transform-origin: top !important;
+            width: 80% !important;
+        }
+    }
+
+    #Tagline-Spotify {
+        margin-top: 15px !important;
+        background-image: none !important;
+        border-radius: 20px !important;
+        width: 95% !important;
+        padding: 20px !important;
+        padding-top: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        background-color: #ff6b00 !important;
+        justify-content: space-around !important;
+
+        p {
+            width: 102% !important;
+            text-align: center !important;
+            font-size: 24px !important;
+        }
+
+        #SpotifyShow {
+            display: none !important;
+        }
+        #SpotifyHidden {
+            display: block !important;
+        }
+    }
+}
+
+//
+
+@media only screen and (max-width: 850px) {
+    #home {
+        width: 95% !important;
+    }
+    #ProfileImage {
+        width: 150px !important;
+        margin-top: -50px !important;
+    }
+    #contact {
+        h2 {
+            display: none !important;
+        }
+    }
+
+    #Social-Name-Search {
+        background-size: 2700px !important;
+        background-position: 50.8% 30px !important;
+        padding-top: 40px !important;
+
+        #Social {
+            width: 90% !important;
+            justify-content: space-between !important;
+            span {
+                a {
+                    display: none !important;
+                }
+            }
+        }
+
+        h1 {
+            font-size: 40px !important;
+            // width: 60% !important;
+            text-align: center;
+            margin-bottom: 2vh !important;
+        }
+
+        #search {
+            input {
+                font-size: 4vw !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    #home {
+        margin-top: 3vh;
+    }
+    #contact {
+        span {
+            i {
+                font-size: 12vw !important;
+            }
+        }
+    }
+
+    #Tagline-Spotify {
+        width: 92% !important;
+    }
+
+    #ProfileImage {
+        width: 100px !important;
+
+        margin-top: -40px !important;
+    }
+
+    #Social-Name-Search {
+        width: 92% !important;
+        background-size: 1800px !important;
+        background-position: 50.8% 0px !important;
+        padding-top: 15px !important;
+        margin-top: -50px !important;
+        #Social {
+            span {
+                img {
+                    width: 10vw !important;
+                }
+            }
+        }
+
+        h1 {
+            width: 80% !important;
+            font-size: 35px !important;
+            margin-top: 1vh !important;
+        }
+
+        #search {
+            i {
+                margin-left: 2vw !important;
+                font-size: 40px !important;
+            }
+        }
+    }
+}
+
+@mixin tagline_responsive($width, $size) {
+    @media only screen and (max-width: $width) {
+        #Tagline-Spotify {
+            p {
+                font-size: $size !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #NavigationBottom {
+        align-items: center;
+        i {
+            font-size: 10vw !important;
+        }
+    }
+
+    #Social-Name-Search {
+        h1 {
+            font-size: 9vw !important;
+        }
+    }
+
+    #SearchContent {
+        #search {
+            input {
+                font-size: 4.7vw !important;
+                width: 68vw !important;
+            }
+            i {
+                font-size: 10vw !important;
+            }
+        }
+    }
+}
+
+@include tagline_responsive(1325px, 23px);
+@include tagline_responsive(1271px, 22.5px);
+@include tagline_responsive(1242px, 22px);
+@include tagline_responsive(1216px, 21.5px);
+@include tagline_responsive(1000px, 21px);
+@include tagline_responsive(977px, 20.5px);
+@include tagline_responsive(954px, 20px);
+@include tagline_responsive(931px, 19.5px);
+@include tagline_responsive(908px, 19px);
+@include tagline_responsive(539px, 18px);
+@include tagline_responsive(511px, 17.8px);
+@include tagline_responsive(479px, 17px);
+@include tagline_responsive(400px, 4.4vw);
+
+@media only screen and (max-width: 830px) {
+    #EmailContent {
+        #email {
+            span {
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+                align-items: center !important;
+                input {
+                    width: 94.5% !important;
+                }
+            }
+            button {
+                padding: 0% 30% !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    #EmailContent {
+        #email {
+            span input,
+            textarea {
+                font-size: 6vw !important;
+            }
+
+            button {
+                font-size: 8vw !important;
+            }
+        }
+    }
+}

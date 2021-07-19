@@ -1,0 +1,218 @@
+#searchwhole {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.432);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #back {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 80px;
+        color: white;
+    }
+
+    #search {
+        height: 93vh;
+        width: 75vw;
+        background-image: linear-gradient(-45deg, yellow, red);
+        padding: 20px;
+        border-radius: 20px;
+
+        #searchinput {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        z-index: 10;
+
+        input {
+            font-size: 30px;
+            letter-spacing: 1px;
+            padding: 10px 20px;
+            width: 1000px;
+            border-radius: 1000px;
+            border: none;
+            border: none;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.541);
+        }
+        i {
+            font-size: 60px;
+            margin-left: 10px;
+            font-weight: bolder;
+        }
+        #seachresults {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 90%;
+            overflow: auto;
+        }
+    }
+}
+
+@mixin res($maxwidth) {
+    @media only screen and (max-width: $maxwidth) {
+        @content;
+    }
+}
+
+@include res(1100px) {
+    #searchwhole {
+        align-items: flex-start;
+        margin-top: 20px;
+        #search {
+            height: 75vh;
+        }
+
+        #back {
+            width: 100vw;
+            right: 0;
+            position: fixed;
+            bottom: 6.5vh;
+            font-size: 50px;
+            top: auto;
+            text-align: center;
+        }
+    }
+}
+
+@include res(1500px) {
+    #search {
+        width: 90vw !important ;
+    }
+
+    #seachresults {
+        #searchresult {
+            flex-direction: column !important;
+            margin: 50px 0px;
+            width: 83vw;
+
+            h3 {
+                position: absolute !important;
+                bottom: -90px;
+                right: auto;
+                top: auto;
+                display: block;
+                width: fit-content;
+            }
+        }
+    }
+}
+
+@include res(850px) {
+    #searchwhole {
+        #seachresults {
+            #searchresult {
+                width: 81vw !important ;
+                p {
+                    font-size: 20px;
+                }
+                h3 {
+                    font-size: 28px;
+                    bottom: -80px;
+                }
+            }
+        }
+    }
+}
+
+@include res(750px) {
+    #searchwhole {
+        #seachresults {
+            #searchresult {
+                width: 79vw !important;
+
+                h3 {
+                    padding: 10px !important;
+                }
+            }
+        }
+    }
+}
+
+@include res(550px) {
+    #searchwhole {
+        #search {
+            padding: 20px 20px 0px 20px !important;
+        }
+
+        #searchinput {
+            input {
+                font-size: 20px;
+            }
+            i {
+                font-size: 40px;
+            }
+        }
+
+        #seachresults {
+            height: 87% !important;
+            #searchresult {
+                h3 {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+
+@include res(470px) {
+    #searchwhole {
+        #search {
+            width: 86vw !important;
+        }
+
+        #seachresults {
+            #searchresult {
+                width: 73vw !important;
+
+                p {
+                    font-size: 15px;
+                }
+
+                h3 {
+                    text-align: center;
+                    bottom: -60px !important;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@include res(400px) {
+    #searchwhole {
+        #searchinput {
+            input {
+                font-size: 15px;
+                padding: 8px;
+            }
+        }
+
+        #seachresults {
+            #searchresult {
+                width: 70vw !important;
+            }
+        }
+    }
+}
+
+@include res(330px){
+    #searchwhole {
+        #seachresults {
+            #searchresult {
+                p {
+                    font-size: 12px !important;
+                }
+                width: 64vw !important;
+            }
+        }
+    }
+}

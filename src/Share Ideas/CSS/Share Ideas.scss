@@ -1,0 +1,281 @@
+#shareideas {
+    width: 100vw;
+    height: 98.3vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        color: white;
+        font-size: 100px;
+        position: fixed;
+        z-index: -1;
+        user-select: none;
+        text-align: center;
+        // width: 100%;
+        text-shadow: 5px 5px 5px rgb(0, 255, 0);
+        // animation: typewriter 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        padding: 10px;
+        // display: none;
+    }
+
+    #minor {
+        display: none;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    .idea {
+        display: inline-flex;
+        flex-direction: column;
+        position: absolute;
+        cursor: move;
+        height: 400px;
+        top: 100px;
+        left: 100px;
+        border: 5px solid transparent;
+        * {
+            outline: none;
+        }
+
+        #number-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            padding: 10px;
+            color: white;
+            font-size: 30px;
+            * {
+                user-select: none;
+            }
+            border-radius: 15px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            div {
+                display: flex;
+                align-items: center;
+
+                #back {
+                    height: 25px;
+                    width: 25px;
+                    background-color: red;
+                    border-radius: 1000px;
+                    margin: 0px 5px;
+                }
+
+                #shortlist {
+                    @extend #back;
+                    background-color: green;
+                }
+            }
+        }
+
+        textarea {
+            background-color: yellow;
+            font-size: 30px;
+            padding: 10px;
+            border-radius: 15px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+    }
+
+    .shortlisted {
+        border: 5px solid rgb(0, 238, 255);
+        border-radius: 20px;
+        animation: shortlisted 0.8s ease-in-out forwards;
+    }
+
+    @keyframes shortlisted {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.1);
+        }
+    }
+
+    #draghere {
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.575);
+        width: 40.5vw;
+        user-select: none;
+        height: 90px;
+        z-index: -1;
+        font-weight: bolder;
+        border: 5px black inset;
+        border-style: dashed;
+        font-size: 3vw;
+        margin: 20px;
+        border-radius: 20px;
+    }
+
+    .dropped {
+        background-color: rgb(0, 255, 55) !important;
+    }
+
+    .activated {
+        background-color: aqua !important;
+    }
+
+    .hovering {
+        background-color: green !important;
+    }
+
+    #add-submit {
+        position: fixed;
+        bottom: 13vh;
+        display: none;
+        user-select: none;
+    }
+}
+
+@mixin res($width) {
+    @media only screen and (max-width: $width) {
+        @content;
+    }
+}
+
+@include res(1400px) {
+    #major {
+        display: none;
+    }
+    #minor {
+        display: inline-block !important;
+    }
+
+    #draghere {
+        display: none !important;
+    }
+
+    #shareideas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        z-index: 1;
+        padding-bottom: 15vh !important;
+        height: fit-content;
+        .idea {
+            position: relative !important;
+            margin: 50px 0px;
+            left: 0px !important;
+            top: 0px !important;
+        }
+    }
+
+    #add-submit {
+        display: flex !important;
+        width: 100vw;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+
+        div {
+            background-color: rgba(255, 255, 255, 0.575);
+            border: 5px black inset;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90vw;
+            border-radius: 20px;
+            border-style: dashed;
+            b {
+                font-size: 100px;
+                border: 4px solid black;
+                width: 30%;
+                text-align: center;
+                color: white;
+                background-color: black;
+            }
+            span {
+                font-size: 35px;
+                width: 65%;
+            }
+        }
+    }
+}
+
+@mixin resideas($maxwidth, $scale) {
+    @media only screen and (max-width: $maxwidth) {
+        #minor {
+            font-size: 100px * $scale !important;
+        }
+
+        .idea {
+            height: 400px * $scale !important;
+            top: 100px * $scale !important;
+            left: 100px * $scale !important;
+            border: 5px * $scale solid transparent !important;
+            margin: 50px * $scale 0px !important;
+
+            #number-buttons {
+                padding: 10px * $scale !important;
+                font-size: 30px * $scale !important;
+                border-radius: 15px * $scale !important;
+                div {
+                    #back {
+                        height: 25px * $scale !important;
+                        width: 25px * $scale !important;
+                        border-radius: 1000px * $scale !important;
+                        margin: 0px * $scale 5px * $scale !important;
+                    }
+
+                    #shortlist {
+                        background-color: green;
+                    }
+                }
+            }
+
+            textarea {
+                font-size: 30px * $scale !important;
+                padding: 10px * $scale !important;
+                border-radius: 15px * $scale !important;
+            }
+        }
+    }
+}
+
+@include resideas(580px, 0.9);
+@include resideas(480px, 0.85);
+@include resideas(440px, 0.75);
+@include resideas(420px, 0.7);
+@include resideas(375px, 0.65);
+@include resideas(340px, 0.55);
+@include resideas(310px, 0.5);
+@include resideas(270px, 0.45);
+@include resideas(250px, 0.4);
+
+@mixin reseas($maxwidth, $scale) {
+    @media only screen and (max-width: $maxwidth) {
+        #add-submit {
+            div {
+                width: 95vw;
+                b {
+                    font-size: 80px * $scale !important;
+                }
+                span {
+                    font-size: 30px * $scale !important;
+                }
+            }
+        }
+    }
+}
+
+@include reseas(600px, 1);
+@include reseas(500px, 0.9);
+@include reseas(420px, 0.8);
+@include reseas(380px, 0.7);
+@include reseas(340px, 0.6);
+@include reseas(290px, 0.5);
+@include reseas(250px, 0.4);

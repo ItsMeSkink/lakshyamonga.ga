@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="Lakshya BlogSite" content="Just a result of 100 billion neurons in the body of 7 x 10^27 atoms..." />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9XQN1Q4P6C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+
+      gtag('config', 'G-9XQN1Q4P6C');
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+      if (window.innerWidth > 1900) {
+        $('#Navigation div:first-child span').hover((e) => {
+          if (e.type == 'mouseenter') {
+            $(e.currentTarget.firstElementChild).show()
+          }
+
+          else if (e.type == "mouseleave") {
+            $(e.currentTarget.firstElementChild).hide()
+          }
+        })
+        $('#Navigation div:nth-child(2) span').hover((e) => {
+          if (e.type == 'mouseenter') {
+            $(e.currentTarget.lastElementChild).show()
+          }
+
+          else if (e.type == "mouseleave") {
+            $(e.currentTarget.lastElementChild).hide()
+          }
+        })
+      }
+
+      setInterval(() => {
+        if (window.innerWidth > 1400) {
+
+          if (location.pathname === '/' || location.pathname === '/create' || location.pathname=== '/create/confirmation'  ) {
+            $('#mainnavigation').hide()
+          }
+          else if (location.pathname != '/') {
+            $('#mainnavigation').show()
+          }
+        }
+
+
+      }, 1);
+
+      if (location.pathname == '/') {
+        // console.log($('#mainnavigation a')[0])
+        $('#mainnavigation a')[0].style.color = 'white'
+      }
+      else if (location.pathname == '/articles') {
+        // console.log($('#mainnavigation a')[0])
+        $('#mainnavigation a')[1].style.color = 'white'
+      }
+      else if (location.pathname == '/shareideas') {
+        // console.log($('#mainnavigation a')[0])
+        $('#mainnavigation a')[2].style.color = 'white'
+      }
+      else if (location.pathname == '/signup') {
+        // console.log($('#mainnavigation a')[0])
+        $('#mainnavigation a')[3].style.color = 'white'
+      }
+      else if (location.pathname == '/friends') {
+        // console.log($('#mainnavigation a')[0])
+        $('#mainnavigation a')[4].style.color = 'white'
+      }
+      else if (location.pathname == '/about') {
+        // console.log($('#mainnavigation a')[0])
+        $('#mainnavigation a')[5].style.color = 'white'
+      }
+
+
+
+      //___________________________________________________________________________________________
+
+
+      function getRandomDarkColor() {
+        var letters = "0123456A";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * letters.length)];
+        }
+        return color;
+      }
+      function getRandomLightColor() {
+        var letters = "456BCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * letters.length)];
+        }
+        return color;
+      }
+
+      if (location.pathname == '/articles') {
+        for (let article = 0; article < $(".article").length; article++) {
+          $(".article")[
+            article
+          ].style.backgroundImage = `linear-gradient( ${getRandomDarkColor()}, black)`;
+        }
+
+        for (let quarter = 0; quarter < $(".article").length; quarter++) {
+          $(".quarter")[quarter].style.backgroundColor = getRandomLightColor();
+        }
+
+
+
+        let articles = document.getElementsByClassName("article");
+
+        $(articles[0]).addClass('major')
+        $(articles[0]).removeClass('minor')
+        // $('.article #brief #content:first-child').addClass('major')
+        // $('.article #brief #content:first-child').removeClass('minor')
+        let articlenumber = articles.length;
+        let i = 0;
+
+        if (window.innerWidth > 1220 + 20) {
+          $(window).on("wheel", (e) => {
+            const scroll = e.originalEvent.deltaY;
+            if (scroll > 0) {
+              if (i < articlenumber - 1 || (i == articlenumber && i > 0)) {
+                ++i;
+                $(articles[i]).addClass("major");
+                $(articles[i]).removeClass("minor");
+
+                $(articles[i - 1]).removeClass("major");
+                $(articles[i - 1]).addClass("minor");
+                $(articles[i - 1]).addClass("scrolled");
+              }
+            }
+
+            if (scroll < 0) {
+              if (i < articlenumber + 2 && i > 0) {
+                --i;
+                $(articles[i + 1]).removeClass("major");
+                $(articles[i + 1]).addClass("minor");
+                // $(articles[i + 1]).addClass('toscroll')
+
+                $(articles[i]).addClass("major");
+                $(articles[i]).removeClass("minor");
+                $(articles[i + 1]).removeClass("scrolled");
+                $(articles[i]).removeClass("scrolled");
+              }
+            }
+          });
+        }
+      }
+
+    </script>
+  </body>
+</html>

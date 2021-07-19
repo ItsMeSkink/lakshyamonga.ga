@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rancho&family=Reem+Kufi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rancho&family=Reem+Kufi&family=Righteous&display=swap");
+
+*:not(font) {
+    font-family: "Righteous";
+    outline: none;
+}
+
+body {
+    background-image: url("https://www.innovationnewsnetwork.com/wp-content/uploads/2020/03/Innovating-satellite-communication-with-quantum-entangled-photons.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: auto;
+
+    * {
+        image-rendering: auto;
+    }
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.material-icons {
+    cursor: default;
+    user-select: none;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: inherit;
+    width: 1400px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
+
+.ReactModalPortal {
+    position: fixed;
+    z-index: 1000;
+    background-color: transparent !important;
+
+    .ReactModal__Overlay {
+        background: none !important;
+        .ReactModal__Content {
+            background-color: transparent !important;
+            border: none !important;
+            inset: 0px !important ;
+            top: 0px;
+            left: 0px;
+            padding: 0px !important;
+        }
+    }
+}
+
+.loading {
+    height: 80px;
+    width: 80px;
+    padding: 15px;
+    border-radius: 10000px;
+    border: 20px solid black;
+    border-top: 20px solid blue;
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

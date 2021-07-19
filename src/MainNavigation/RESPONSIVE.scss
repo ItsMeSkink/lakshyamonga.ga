@@ -1,0 +1,34 @@
+@mixin res($maxwidth) {
+    @media screen and (max-width: $maxwidth) {
+        @content;
+    }
+}
+
+@include res(540px) {
+    #mainnavigation {
+        a {
+            font-size: 10vw !important;
+        }
+
+        a:nth-child(5){
+            display: none!important;
+        }
+    }
+}
+
+@include res(1400px) {
+    #mainnavigation {
+        position: fixed!important;
+        z-index: 100000!important;
+        width: 100vw!important;
+        left: 0px!important;
+        bottom: 0px !important;
+        justify-content: space-around !important;
+        border-radius: 0 !important;
+
+        #search {
+            display: none !important;
+        }
+    }
+}
+

@@ -1,0 +1,101 @@
+
+@mixin majorscale($scale) {
+    position: relative;
+    padding: 15px * $scale;
+    // background-image: linear-gradient(red, black);
+    box-shadow: 20px * $scale 20px * $scale 20px * $scale rgba(0, 0, 0, 0.616);
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+    border-radius: 20px * $scale;
+    width: fit-content;
+
+    #title-content_spotify {
+        display: inline-flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 600px * $scale;
+
+        h4 {
+            // Title
+            width: 40%;
+            font-size: 40px * $scale;
+            margin: 10px * $scale;
+        }
+
+        #content-spotify {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            font-size: 13px * $scale;
+            width: 38%;
+            margin-top: 5px * $scale;
+
+            p {
+                height: 305px * $scale;
+                overflow: hidden;
+                margin: 0px;
+                width: 100%;
+            }
+
+            img {
+                margin-top: 20px * $scale;
+                height: 76.5px * $scale;
+            }
+        }
+    }
+
+    #thumbnail {
+        margin-top: 30px * $scale;
+        height: 330px * $scale;
+        width: 600px * $scale;
+        border-radius: 20px * $scale;
+        object-fit: cover;
+    }
+
+    .quarter {
+        width: 200px * $scale;
+        height: 200px * $scale;
+        border-radius: 400px * $scale 20px * $scale 20px * $scale 20px * $scale;
+        -moz-border-radius: 0 0 100px 0;
+        -webkit-border-radius: 400px * $scale 20px * $scale 20px * $scale 20px * $scale;
+        width: 45%;
+        height: 35%;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        // background-color: ;
+        z-index: 1;
+    }
+    & *:not(.quarter) {
+        z-index: 2;
+    }
+}
+
+#articles {
+    display: grid;
+    grid-template-rows: repeat(2, 390px);
+    grid-template-columns: repeat(100, 305px);
+    grid-gap: 20px;
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    z-index: 50;
+
+    .major {
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
+        @include majorscale(1);
+    }
+
+    .minor {
+        @include majorscale(0.475);
+    }
+    .scrolled {
+        grid-row: 2;
+    }
+}
+
+@import "./responsive.scss";

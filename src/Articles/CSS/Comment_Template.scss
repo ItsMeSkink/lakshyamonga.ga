@@ -1,0 +1,85 @@
+#comments {
+    position: absolute;
+    bottom: 1vh;
+    right: 15vw;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    #commentbutton {
+        background-color: white;
+        font-size: 40px;
+        padding: 10px 20px;
+        border-radius: 1000px;
+        user-select: none;
+        cursor: default;
+
+        display: flex;
+        align-items: center;
+        background-color: aqua;
+        box-shadow: 5px 5px rgb(255, 0, 255);
+
+        i {
+            font-size: 35px;
+            margin-left: 10px;
+        }
+    }
+
+    #commentsection {
+        background-color: bisque;
+        height: 50vh;
+        width: 400px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        border: 1px solid black;
+        box-shadow: 5px 5px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        #displaycomments {
+            height: 90%;
+            overflow: auto;
+            #comment {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            #profilepic {
+                width: 50px;
+                border-radius: 1000px;
+            }
+            #text {
+                font-size: 20px;
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                i {
+                    width: 30%;
+                }
+            }
+        }
+
+        #docomment {
+            display: flex;
+            align-items: center;
+            input {
+                padding: 5px;
+                font-size: 20px;
+                border: none;
+                border-bottom: 2px solid black;
+                background-color: transparent;
+                width: 85%;
+            }
+            i {
+                font-size: 30px;
+                margin-left: 10px;
+            }
+        }
+    }
+}

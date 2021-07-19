@@ -1,0 +1,156 @@
+#confirmation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 98vw;
+    height: 98vh;
+    top: 10px;
+    right: 10px;
+    border-radius: 20px;
+    position: absolute;
+
+    #optionInputs {
+        width: 36%;
+        background-color: red;
+        height: 97.7%;
+        border-radius: 20px 0px 0px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        *:not(input) {
+            cursor: default;
+        }
+        div#thumbnailoi {
+            width: 98%;
+            height: 40%;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.596);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            form {
+                background-color: rgb(0, 255, 255);
+                padding: 10px 20px;
+                border-radius: 10px;
+                margin-bottom: 5px;
+            }
+            #webimage {
+                width: 65%;
+                display: flex;
+                align-items: center;
+                #WebThumbnail {
+                    padding: 10px 20px;
+                    font-size: 24px;
+                    border: none;
+                    border-radius: 10px;
+                    margin-top: 5x;
+                    width: 400px;
+                }
+
+                span {
+                    font-size: 50px;
+                    background-color: rgb(0, 255, 0);
+                    padding: 0px 10px;
+                    border-radius: 10px;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        img#thumbnailoi {
+            width: 98%;
+            height: 40%;
+            border-radius: 20px;
+        }
+        #labels-podcast-socials {
+            width: 98%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 58%;
+
+            #labels {
+                color: white;
+                padding-top: 30px;
+                margin-left: 20px;
+                margin-top: 0px;
+                list-style-type: square;
+                width: 50%;
+
+                input {
+                    border-radius: 10px;
+                    padding: 5px 20px;
+                    font-size: 40px;
+                    border: none;
+                    margin: 10px 0px;
+                    border-left: 20px solid black;
+                    width: 300px;
+                }
+            }
+            #podcast-socials {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                #podcast {
+                    font-size: 100px;
+                    color: white;
+                    margin: 15px;
+                    margin-top: 25px;
+                    background-color: black;
+                    border-radius: 10px;
+                    padding: 10px;
+                }
+                #socials {
+                    display: grid;
+                    grid-template-columns: repeat(2, auto);
+                    grid-template-rows: repeat(2, auto);
+                    grid-gap: 10px;
+                    img {
+                        width: 65px;
+                        height: 65px;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+
+    #autosavedDisplay {
+        width: 64%;
+        background-color: white;
+        height: 100%;
+        border-radius: 0px 20px 20px 0px;
+        padding: 0px 20px;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+
+        #titlead {
+            border-bottom: 5px solid black;
+            margin: 10px;
+            padding-bottom: 10px;
+        }
+        div#contentad {
+            overflow: auto;
+            height: 70%;
+            margin-top: 15px;
+            padding-right: 20px;
+        }
+        button {
+            position: absolute;
+            border: none;
+            bottom: 0px;
+            right: 0px;
+            width: 100%;
+            font-size: 50px;
+            padding: 10px 0;
+            background-color: rgb(0, 255, 0);
+        }
+    }
+}

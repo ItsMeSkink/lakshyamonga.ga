@@ -1,0 +1,172 @@
+@mixin majorscale($scale) {
+    padding: 15px * $scale;
+    box-shadow: 20px * $scale 20px * $scale 20px * $scale rgba(0, 0, 0, 0.616);
+    border-radius: 20px * $scale;
+
+    #title-content_spotify {
+        width: 600px * $scale;
+
+        h4 {
+            // Title
+            font-size: 40px * $scale;
+            margin: 10px * $scale;
+        }
+
+        #content-spotify {
+            font-size: 13px * $scale;
+            margin-top: 5px * $scale;
+
+            p {
+                height: 305px * $scale;
+            }
+
+            img {
+                margin-top: 20px * $scale;
+                height: 76.5px * $scale;
+            }
+        }
+    }
+
+    #thumbnail {
+        margin-top: 30px * $scale;
+        height: 330px * $scale;
+        width: 600px * $scale;
+        border-radius: 20px * $scale;
+    }
+
+    .quarter {
+        width: 200px * $scale;
+        height: 200px * $scale;
+        border-radius: 400px * $scale 20px * $scale 20px * $scale 20px * $scale;
+        -webkit-border-radius: 400px * $scale 20px * $scale 20px * $scale 20px * $scale;
+    }
+}
+
+@mixin resscale($scale, $maxwidth) {
+    @media only screen and (max-width: $maxwidth) {
+        #articles {
+            .article,
+            .minor {
+                padding: 15px * $scale !important;
+                box-shadow: 20px * $scale 20px * $scale 20px * $scale rgba(0, 0, 0, 0.616) !important;
+                border-radius: 20px * $scale !important ;
+
+                #title-content_spotify {
+                    width: 600px * $scale !important;
+
+                    h4 {
+                        // Title
+                        font-size: 40px * $scale !important;
+                        margin: 10px * $scale !important;
+                    }
+
+                    #content-spotify {
+                        font-size: 13px * $scale !important;
+                        margin-top: 5px * $scale !important;
+
+                        p {
+                            height: 305px * $scale !important;
+                        }
+
+                        img {
+                            margin-top: 20px * $scale !important;
+                            height: 76.5px * $scale !important;
+                        }
+                    }
+                }
+
+                #thumbnail {
+                    margin-top: 30px * $scale !important;
+                    height: 330px * $scale !important;
+                    width: 600px * $scale !important;
+                    border-radius: 20px * $scale !important;
+                }
+
+                .quarter {
+                    width: 200px * $scale !important;
+                    height: 200px * $scale !important;
+                    border-radius: 400px * $scale 20px * $scale 20px * $scale 20px * $scale !important;
+                    -webkit-border-radius: 400px * $scale 20px * $scale 20px * $scale 20px * $scale !important;
+                }
+            }
+        }
+    }
+}
+
+// @include resscale(0.1, 800px);
+@include resscale(0.9, 800px);
+@include resscale(0.8, 600px);
+@include resscale(0.7, 530px);
+@include resscale(0.6, 460px);
+@include resscale(0.5, 400px);
+@include resscale(0.4, 340px);
+
+@media only screen and (max-width: 1400px) {
+    #articles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100vw;
+        left: 0vw;
+        padding-bottom: 10vh !important;
+
+        .minor {
+            @include majorscale(1);
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    #detail {
+        height: 90vh !important;
+        margin: 0 !important;
+        width: 100vw !important;
+        overflow: auto !important;
+
+        #back {
+    
+            display: none;
+        }
+    }
+
+    #thumbnail-tags-spotify-share {
+        display: none !important;
+    }
+
+    #title-content {
+        width: 100% !important;
+        padding: 0px !important;
+        // overflow: auto;
+        overflow-y: auto !important;
+
+        #title {
+            background-color: red;
+            width: 97.75%;
+            margin: 0px !important;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        p {
+            height: max-content !important;
+            overflow-x: hidden !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #detail {
+        #title-content {
+            #title {
+                font-size: 8.5vw !important;
+            }
+        }
+
+        #back {
+            img {
+                width: 40px !important;
+            }
+        }
+    }
+}
